@@ -1,6 +1,7 @@
 <?php
 namespace WSTDB;
 use mimosafa\WP\Object;
+use mimosafa\WP\Component;
 
 class Bootstrap {
 
@@ -10,7 +11,13 @@ class Bootstrap {
 	}
 
 	private function __construct() {
-		$this->init_repositories();
+		// $this->init_repositories();
+		$this->init_components();
+	}
+
+	private function init_components() {
+		$kcc = Component\PostType::generate( 'kitchencar', 'wstdb_kitchencar' );
+		var_dump( $kcc );
 	}
 
 	private function init_repositories() {
