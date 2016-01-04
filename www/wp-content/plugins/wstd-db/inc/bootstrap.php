@@ -16,8 +16,12 @@ class Bootstrap {
 	}
 
 	private function init_components() {
-		$kcc = Component\PostType::generate( 'kitchencar', 'wstdb_kitchencar' );
-		var_dump( $kcc );
+		$kcc = Component\PostType::generate( 'kitchencar', 'wstdb_car' );
+		$kcc->public = true;
+		$kcc->label = 'キッチンカー';
+		$kcc->support_editor = false;
+		$kcc->support_excerpt = true;
+		$kcc->label_add_new = '新規登録';
 	}
 
 	private function init_repositories() {
